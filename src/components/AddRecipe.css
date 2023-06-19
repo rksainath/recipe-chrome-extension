@@ -1,0 +1,313 @@
+.newRecipeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 24px;
+  position: relative;
+  width: 410px;
+  height: 879px;
+  margin: auto;
+  background: #0d1119;
+  border-radius: 10px;
+}
+.newRecipeContainer .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 12px;
+  /* width: 362px; */
+  height: 70px;
+  flex: none;
+  flex-grow: 0;
+}
+.newRecipeContainer .row.row-0 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  /* width: 362px; */
+  height: 43px;
+
+  order: 0;
+  flex-grow: 0;
+}
+
+.newRecipeContainer .row.row-1 {
+  order: 1;
+  align-self: stretch;
+}
+.newRecipeContainer .row.row-2 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  height: 136px;
+  order: 2;
+}
+.newRecipeContainer .row.row-3 {
+  order: 3;
+  align-self: stretch;
+}
+.newRecipeContainer .row.row-4 {
+  order: 4;
+  align-self: stretch;
+}
+.newRecipeContainer .row.row-5 {
+  order: 5;
+  align-self: stretch;
+}
+.newRecipeContainer .row.row-6 {
+  order: 6;
+  align-self: stretch;
+}
+.newRecipeContainer .row.row-7 {
+  order: 7;
+  align-self: stretch;
+}
+.newRecipeContainer .btn {
+  margin-top: 24px;
+  cursor: pointer;
+  padding: 9px 14px 11px;
+  height: 40px;
+  background: #764af4;
+  border-radius: 6px;
+  order: 8;
+  align-self: stretch;
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.newRecipeContainer .btn span {
+  /* width: 85px; */
+  /* height: 20px; */
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.newRecipeContainer .row.row-0 .newRecipeHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  width: 167px;
+  height: 27px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.newRecipeContainer .row.row-0 .newRecipeHeader .arrowLeft {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  cursor: pointer;
+}
+
+.newRecipeContainer .row.row-0 .newRecipeHeader .heading {
+  width: 133px;
+  height: 27px;
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.newRecipeContainer .row.row-0 .hline {
+  width: 410px;
+  height: 0px;
+  border: 1px solid #2e3347;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.newRecipeContainer .row .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+  width: 175px;
+  height: 70px;
+  flex: none;
+  flex-grow: 1;
+}
+
+.newRecipeContainer .row .col.col-0 {
+  order: 0;
+}
+
+.newRecipeContainer .row .col.col-1 {
+  order: 1;
+}
+
+.newRecipeContainer .row .col .col-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 5px;
+  width: 54px;
+  height: 20px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.newRecipeContainer .row .col .col-heading .textHeading {
+  /* width: 54px; */
+  height: 20px;
+
+  /* Default/Forms/Label */
+
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  /* Default/White */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.newRecipeContainer .row .col .col-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 11px;
+  gap: 10px;
+  /* width: 175px; */
+  height: 40px;
+  background: #181f30;
+  box-shadow: 0px 0px 0px 1px #5b6178;
+  border-radius: 6px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.newRecipeContainer .row .col .col-value input {
+  border: none;
+  background: none;
+  height: 24px;
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #e9eaf6;
+}
+
+.newRecipeContainer .row.row-7 .col .col-value input {
+  width: 100%;
+}
+
+.newRecipeContainer .row .col .col-value input:focus,
+.newRecipeContainer .row.row-2 .col.col-0 textarea:focus,
+.newRecipeContainer .row .col .col-value select:focus {
+  outline: none;
+}
+
+.newRecipeContainer .row .col .col-value input::placeholder {
+  color: #e9eaf6;
+}
+
+.newRecipeContainer .row .col .col-value select {
+  width: 175px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: #e9eaf6;
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #e9eaf6;
+}
+
+.newRecipeContainer .row.row-2 .col.col-0 .charLimit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 6px;
+  /* width: 116px; */
+  height: 24px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.newRecipeContainer .row.row-2 .col.col-0 .col-value {
+  width: 386px;
+  height: 72px;
+}
+
+.newRecipeContainer .row.row-2 .col.col-0 textarea {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 11px;
+  gap: 10px;
+  background: none;
+  border: none;
+  width: 361px;
+  /* height: 56px; */
+
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #e9eaf6;
+}
+
+.newRecipeContainer .row.row-2 .col.col-0 textarea::placeholder {
+  color: #e9eaf6;
+}
+
+.newRecipeContainer .row.row-2 .col.col-0 .charLimit p {
+  /* width: 116px; */
+  height: 24px;
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #43495e;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}

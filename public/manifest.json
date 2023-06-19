@@ -9,5 +9,7 @@
   },
   "icons": {
     "32": "yummazzo-logo.png"
-  }
+  },
+  "host_permissions": ["https://master-7rqtwti-yj2le3kr2yhmu.uk-1.platformsh.site/*"],
+  "permissions": ["activeTab"]
 }
