@@ -13,7 +13,13 @@ const apiService = {
       const response = await api.post('/yumazoo/recipes', data)
       return response.data
     } catch (error) {
-      throw new Error(error.response.data.error)
+      const errorData = error.response.data
+      if (errorData.detail && Array.isArray(errorData.detail)) {
+        const errorMessages = errorData.detail.map((error) => `${error.loc[1].toUpperCase()}:${error.msg}`)
+        throw new Error(errorMessages)
+      } else {
+        throw new Error('Error:', error.message)
+      }
     }
   },
 

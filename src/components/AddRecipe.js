@@ -20,11 +20,13 @@ const AddRecipe = (props) => {
   const createRecipe = async (payload) => {
     try {
       const newRecipe = await apiService.createRecipe(payload)
-      console.log('Created recipe:', newRecipe)
-      alert('Recipe added successfully!')
+      console.log(newRecipe)
+      alert(newRecipe.message)
+      resetValues()
     } catch (error) {
-      console.error(error)
-      alert('Error adding the recipe.')
+      const errMsg = error.message.replace(/,/g, '\n')
+      console.log(errMsg)
+      alert(errMsg)
     }
   }
 
@@ -61,22 +63,20 @@ const AddRecipe = (props) => {
 
   const onSubmitHandler = () => {
     const finalPayload = {
-      name,
-      origin,
-      description,
-      difficulty: diff,
-      protein,
-      produce,
-      spice,
-      cookingOil,
-      volume,
-      serves,
-      authenticity: auth,
-      stock,
+      name: !!name ? name : undefined,
+      origin: !!origin ? origin : undefined,
+      description: !!description ? description : undefined,
+      difficulty: !!diff ? diff : undefined,
+      protein: !!protein ? protein : undefined,
+      produce: !!produce ? produce : undefined,
+      spice: !!spice ? spice : undefined,
+      cookingOil: !!cookingOil ? cookingOil : undefined,
+      volume: !!volume ? volume : undefined,
+      serves: !!serves ? serves : undefined,
+      authenticity: !!auth ? auth : undefined,
+      stock: !!stock ? stock : undefined,
     }
-
     createRecipe(finalPayload)
-    resetValues()
   }
 
   const backArrowHandler = () => {
@@ -110,6 +110,7 @@ const AddRecipe = (props) => {
                   setName(e.target.value)
                 }
               }}
+              placeholder='recipe name'
             />
           </div>
         </div>
@@ -177,6 +178,7 @@ const AddRecipe = (props) => {
                   setProtein(e.target.value)
                 }
               }}
+              placeholder='protein'
             />
           </div>
         </div>
@@ -195,6 +197,7 @@ const AddRecipe = (props) => {
                   setSpice(e.target.value)
                 }
               }}
+              placeholder='spices'
             />
           </div>
         </div>
@@ -211,6 +214,7 @@ const AddRecipe = (props) => {
                   setCookingOil(e.target.value)
                 }
               }}
+              placeholder='oil'
             />
           </div>
         </div>
@@ -221,7 +225,7 @@ const AddRecipe = (props) => {
             <div className='textHeading'>Volume/Weight</div>
           </div>
           <div className='col-value'>
-            <input type='number' value={volume} onChange={(e) => setVolume(e.target.value)} />
+            <input type='number' value={volume} onChange={(e) => setVolume(e.target.value)} placeholder='vol/weight' />
           </div>
         </div>
         <div className='col col-1'>
@@ -237,6 +241,7 @@ const AddRecipe = (props) => {
                   setProduce(e.target.value)
                 }
               }}
+              placeholder='produce'
             />
           </div>
         </div>
@@ -247,7 +252,7 @@ const AddRecipe = (props) => {
             <div className='textHeading'>Serves</div>
           </div>
           <div className='col-value'>
-            <input type='number' value={serves} onChange={(e) => setServes(e.target.value)} />
+            <input type='number' value={serves} onChange={(e) => setServes(e.target.value)} placeholder='serves' />
           </div>
         </div>
         <div className='col col-1'>
@@ -279,6 +284,7 @@ const AddRecipe = (props) => {
                   setStock(e.target.value)
                 }
               }}
+              placeholder='stocks'
             />
           </div>
         </div>

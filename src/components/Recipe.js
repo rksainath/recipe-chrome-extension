@@ -19,6 +19,31 @@ const Recipe = (props) => {
     return flgImg
   }
 
+  function getRandomTime(difficulty) {
+    let minTime, maxTime
+
+    switch (difficulty) {
+      case 'Easy':
+        minTime = 5
+        maxTime = 20
+        break
+      case 'Medium':
+        minTime = 15
+        maxTime = 40
+        break
+      case 'Hard':
+        minTime = 30
+        maxTime = 60
+        break
+      default:
+        return null
+    }
+
+    const randomTime = Math.floor(Math.random() * (maxTime - minTime + 1) + minTime)
+
+    return randomTime
+  }
+
   useEffect(() => {
     apiService
       .getRecipes()
@@ -123,28 +148,16 @@ const Recipe = (props) => {
           <div className='dish'>
             <div className='dishContainer'>
               <div className='nameAndCountry'>
-                {/* <div className='flag'>{flag(dish?.origin)}</div>
-                <div className='nameContainer'>
-                  <div className='name'>{dish.name}</div>
-                </div> */}
                 {flag(dish?.origin)}
                 <p className='name'>{dish.name}</p>
               </div>
               <div className='diffLevel'>
-                {/* <div className='difficultyIcon'>
-                  <div className='iconContainer'>
-                    <div className={`icon`}>{getColor(dish?.difficulty)}</div>
-                  </div>
-                </div>
-                <div className='difficultyText'>
-                  <div className='text'>{difficultyLevel(dish?.difficulty)}</div>
-                </div> */}
                 {getColor(dish?.difficulty)}
                 <p className='text'>{difficultyLevel(dish?.difficulty)}</p>
               </div>
             </div>
             <div className='vline'></div>
-            <div className='timetaken'>35 min</div>
+            <div className='timetaken'>{getRandomTime(difficultyLevel(dish?.difficulty))} min</div>
           </div>
         </div>
       ))
@@ -156,25 +169,7 @@ const Recipe = (props) => {
     setSearchResults(result)
   }
 
-  //   const onSelection = (event) => {
-  //     const id = +event.target.id
-  //     console.log(id)
-  //     performSelection(id)
-  //   }
-
   const performSelection = (id) => {
-    /* const selection = recipes.findIndex((dish) => dish.id === id)
-    console.log(selection)
-    selection !== -1 &&
-      apiService
-        .getRecipe(selection)
-        .then((data) => {
-          setSelectedDish(data.message)
-          setSearchText('')
-        })
-        .catch((error) => {
-          console.error(error)
-        }) */
     !!id &&
       apiService
         .getRecipe(id)
@@ -267,7 +262,7 @@ const Recipe = (props) => {
       <div className='recipeDetails'>
         <div className='row row-1'>
           <div className='col col-1'>
-            <div className='textTitle'>Seafood</div>
+            <div className='textTitle'>Protein</div>
             <div className='white'>{selectedDish?.protein}</div>
           </div>
           <div className='col col-2'>
@@ -278,13 +273,10 @@ const Recipe = (props) => {
         <div className='row row-2'>
           <div className='col col-1'>
             <div className='textTitle'>Spices</div>
-            <div>
-              {/* <span className='sunfire'>{selectedDish && selectedDish?.spice}</span> */}
-              {spiceUsed(selectedDish?.spice)}
-            </div>
+            <div>{spiceUsed(selectedDish?.spice)}</div>
           </div>
           <div className='col col-2'>
-            <div className='textTitle'>Olive Oil</div>
+            <div className='textTitle'>Cooking Oil</div>
             <div className='sunfire'>{selectedDish?.cookingOil}</div>
           </div>
         </div>
